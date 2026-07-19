@@ -1,0 +1,16 @@
+{
+  "name": "policy-research-kit",
+  "owner": {
+    "name": "Jui Park",
+    "email": "parkjui92@gmail.com",
+    "url": "https://github.com/parkjui92-tech"
+  },
+  "plugins": [
+    {
+      "name": "policy-research-kit",
+      "source": "./",
+      "description": "정책연구보고서 에이전트 팀 (5인): 연구설계 → 설계검토 게이트 → 목차 사용자 승인 → 근거조사 → 집필 → 5축 검수(출처 실재 검증) → 한글(.hwpx) 변환. 표준 50p+/브리프 4~8p 2모드.",
+      "version": "0.9.0"
+    }
+  ]
+}

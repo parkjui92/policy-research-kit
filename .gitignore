@@ -1,0 +1,5 @@
+.DS_Store
+_workspace/
+__pycache__/
+*.pyc
+.env
