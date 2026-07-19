@@ -5,6 +5,7 @@
 | 폴더 | 주제(합성) | 봐야 할 것 |
 |---|---|---|
 | `policy-brief-demo/` | 고령자 디지털 정보격차 완화 (브리프 모드) | `02_design_gate.md` 게이트1 판정 · `05_review.md` 수치 오귀속 적발 · `06_brief.hwpx` |
+| `policy-standard-demo/` | 같은 주제의 **표준 보고서 모드(8장·본문 65p급·표 11종·참고문헌 51건)** — 브리프와의 규모 대비 | 게이트1 [필수]4건→설계 v2 반영 · `05_draft_review.md` 표본 대조 40건 불일치 0·유령인용 0 · `06_report.hwpx`(표 69/69 행 일치·왕복 유사도 1.000000) · `06_conversion_report.md` |
 | `vanilla-baseline/` | **같은 요청을 순정 Claude Code에 준 대조군** | 감사 결과: [docs/vanilla-vs-kit.md](../docs/vanilla-vs-kit.md) — 인용 10건·원문 열람 0회·귀속 오류 2건 |
 
 ※ 전부 합성 주제·데모 규모다. 근거는 핵심 수치만 실검증(URL 병기)했고 미확보분은 `[보강 필요]`로 남겼다 — 이 정직성 규율 자체가 킷의 일부다.
