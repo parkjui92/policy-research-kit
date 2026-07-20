@@ -29,7 +29,7 @@
 ## 설치·사용
 
 ```
-/plugin marketplace add parkjui92-tech/policy-research-kit
+/plugin marketplace add parkjui92/policy-research-kit
 /plugin install policy-research-kit@policy-research-kit
 ```
 
@@ -53,7 +53,7 @@
 
 ## 시리즈
 
-다른 킷: [rnd-proposal-kit](https://github.com/parkjui92-tech/rnd-proposal-kit) · [socsci-paper-kit](https://github.com/parkjui92-tech/socsci-paper-kit) · 단독 검증 스킬: [fact-verify](https://github.com/parkjui92-tech/fact-verify) · [paper-proofread](https://github.com/parkjui92-tech/paper-proofread) · [form-tailor](https://github.com/parkjui92-tech/form-tailor) · [report-to-brief](https://github.com/parkjui92-tech/report-to-brief)
+다른 킷: [rnd-proposal-kit](https://github.com/parkjui92/rnd-proposal-kit) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) · 단독 검증 스킬: [fact-verify](https://github.com/parkjui92/fact-verify) · [paper-proofread](https://github.com/parkjui92/paper-proofread) · [form-tailor](https://github.com/parkjui92/form-tailor) · [report-to-brief](https://github.com/parkjui92/report-to-brief)
 
 ## 라이선스
 

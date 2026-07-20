@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "author": {
     "name": "Jui Park",
-    "url": "https://github.com/parkjui92-tech"
+    "url": "https://github.com/parkjui92"
   },
-  "homepage": "https://github.com/parkjui92-tech/policy-research-kit",
-  "repository": "https://github.com/parkjui92-tech/policy-research-kit",
+  "homepage": "https://github.com/parkjui92/policy-research-kit",
+  "repository": "https://github.com/parkjui92/policy-research-kit",
   "license": "Apache-2.0",
   "keywords": [
     "policy-research",

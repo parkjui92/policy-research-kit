@@ -14,4 +14,4 @@
 - 전 과정 예제(examples/)·검증 게이트 방법론(docs/) 동봉.
 - 공개판 조정: `model: inherit` 기본, 팀 API 부재 시 순차 Agent 폴백, BYO-template, geo-search 내장.
 
-다른 킷: https://github.com/parkjui92-tech/rnd-proposal-kit · https://github.com/parkjui92-tech/socsci-paper-kit
+다른 킷: https://github.com/parkjui92/rnd-proposal-kit · https://github.com/parkjui92/socsci-paper-kit
