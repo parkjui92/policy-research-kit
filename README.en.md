@@ -6,36 +6,35 @@
 
 [한국어](README.md) · **English**
 
-A [Claude Code](https://claude.com/claude-code) plugin: a **five-agent team** that takes a policy research report from research design to a submission-ready Korean `.hwpx` file.
-The difference isn't prose quality — it's **verification by default**. The output tells you which figures were confirmed against primary sources and which are still unverified.
+A [Claude Code](https://claude.com/claude-code) plugin that writes a policy research report for you, start to finish.
 
-<!-- demo GIF goes here -->
+Give it a topic and it drafts an outline, gathers sources, writes the body, and produces a Korean `.hwpx` file (the document format Korean government offices require). Five AIs split the work, and one of them **only reviews** — so the AI that wrote the text can never sign off on its own work. That's the whole idea.
 
-## Why gates
+## What makes it different
 
-Same request, same model, run through vanilla Claude Code and through this kit. A neutral third-party session then opened all 14 cited URLs from both and checked every figure against the source.
+Ask any AI to draft a research report and the writing comes out smooth. The catch is that **nobody checks whether the numbers in it are right.** Ten real, working links at the bottom make it look verified — but open them and you find figures borrowed from a different survey entirely.
 
-| | Vanilla | Kit |
+So I measured it. I gave the same topic to plain Claude Code and to this plugin, then had a neutral third party **open all 14 cited links** from both and compare them against the originals.
+
+| | Plain Claude Code | This plugin |
 |---|---|---|
-| Cited sources actually opened | **0** | Every key figure |
-| Numeric / attribution errors | **2** (all stated confidently) | **0** (unverified marked `[needs verification]`) |
-| Process artifacts retained | 0/5 | **5/5** |
+| Did it actually open its sources? | Never opened one | Opened every key figure |
+| Wrong numbers or wrong attribution | **2** (all stated as fact) | **0** (unconfirmed ones marked "needs checking") |
+| Did the work leave a trail? | No | 5 files |
 
-Vanilla writes better prose. The problem is that **nothing caught those two errors, and no record existed that could have.**
+To be straight with you: **plain Claude Code writes better prose.** The problem was that its draft had two wrong numbers in it, with no way to catch them and no record to check later.
 
-→ [Full audit](docs/vanilla-vs-kit.md) · [Why I built this + detailed usage](docs/why.md)
+→ [Full comparison](docs/vanilla-vs-kit.md) · [Why I built this, and fuller usage notes](docs/why.md)
 
-## Pipeline
+## How it runs
 
 ```
-Design → 🚦Gate 1 (design review) → ★You approve the outline
-       → Research → Drafting → 🚦Gate 2 (5-axis review) → hwpx
+Outline → 🚦Check 1 → ★You confirm the outline → Research → Writing → 🚦Check 2 → Korean file
 ```
 
-Gate 1 protects **cost** (before 50 pages exist against the wrong outline); gate 2 protects against **overconfidence**.
-The reviewer is a **different agent** from the writer and is read-only, so nobody signs off on their own work.
+It **stops twice.** The first stop catches a bad outline — once 50 pages exist against the wrong structure, there's no cheap way back, so it checks before writing. The second stop reviews the finished draft, because polished writing is hard to doubt on your own. That review is done by **a different AI that didn't write anything**, in read-only mode.
 
-Caught in practice: 3 hallucinated sources · a 10× unit-conversion error · a population misreading · an overreaching research question downgraded.
+Things these checks have actually caught: 3 sources that didn't exist, a figure converted 10× off, an overall average written as if it applied to one specific group, and a research question claiming more than the evidence could support.
 
 ## Install
 
@@ -44,40 +43,43 @@ Caught in practice: 3 hallucinated sources · a 10× unit-conversion error · a 
 /plugin install policy-research-kit@policy-research-kit
 ```
 
-## Usage
+## Using it
+
+Just ask in plain language.
 
 ```
-Write a policy research report on regional depopulation. Notes attached.   ← standard 50p+
-Just a quick 4-page policy brief on this topic.                            ← brief mode
-Review this 200-page report and shore up the weak sourcing.                ← existing report
-Make chapter 3 center on international cases                               ← at the outline gate
+Write a policy report on regional depopulation. Notes attached.   ← 50+ pages
+Just a quick 4-page policy brief on this.                         ← short version
+Review this 200-page report and shore up the weak sourcing.       ← fixing an existing one
+Make chapter 3 center on international cases                      ← at the outline step
 ```
 
-It pauses twice (outline approval after gate 1, revision confirmation after gate 2), so you can step away in between.
+That last one matters: when it shows you the outline, asking for changes rebuilds it right there. **It's the cheapest moment to change direction.**
 
-## What you get
+## What you end up with
 
-Not one document but **an auditable record set** — design, gate rulings, evidence ledger, review findings, fix log, final hwpx.
-Which means that six months later, when someone asks where a figure came from, you can answer.
+Not just a finished report — **the whole process stays on disk as files.**
 
-Worked examples: [standard, 65-page class](examples/policy-standard-demo/) · [brief](examples/policy-brief-demo/) · [vanilla baseline](examples/vanilla-baseline/)
+The outline, what the first check flagged and why, a list of which fact came from which source, the draft, what the second check found and what was actually changed, and the final Korean file.
 
-## Requirements & limits
+Which means that months later, when someone asks where a number came from, you can answer.
 
-- `.hwpx` conversion needs the [kordoc](https://github.com/chrisryugj/kordoc) MCP server (without it the pipeline stops at Markdown)
-- **Gates reduce errors; they don't eliminate them.** The reviewer shares a model family with the writer and can share its blind spots
-- The A/B is a single run on a single topic — a reproducible case, not a statistical claim
-- Shaped by Korean policy-research conventions (HWPX submission, Korean-language evidence)
-- [Fallbacks, dependencies, keys](docs/runtime-notes.md) · [Gate design methodology](docs/verification-gates.md)
+## Good to know
 
-## Series
+- Producing the Korean `.hwpx` file needs a separate converter called [kordoc](https://github.com/chrisryugj/kordoc). Without it everything still runs and you get Markdown.
+- **The checks reduce errors but don't eliminate them.** The reviewing AI comes from the same model family and can share the same blind spots. A person still needs to look.
+- The comparison above was **one topic, run once**. Treat it as a case you can reproduce, not a proven statistic.
+- It's shaped around Korean policy-research practice (HWPX submissions, Korean-language sources).
+- [If setup gives you trouble](docs/runtime-notes.md) · [Building this kind of review structure yourself](docs/verification-gates.md)
 
-**Agent-team kits** — [rnd-proposal-kit](https://github.com/parkjui92/rnd-proposal-kit) (Korean government R&D proposals) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) (social science papers)
+## Related work
 
-**Authoring & editing kits** — [lecture-deck-kit](https://github.com/parkjui92/lecture-deck-kit) (HTML lecture decks · live browser editing)
+**Plugins that write reports and proposals** — [rnd-proposal-kit](https://github.com/parkjui92/rnd-proposal-kit) (Korean government R&D proposals) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) (social science papers)
 
-**Standalone skills** — [fact-verify](https://github.com/parkjui92/fact-verify) (source verification) · [paper-proofread](https://github.com/parkjui92/paper-proofread) (Korean academic proofreading) · [form-tailor](https://github.com/parkjui92/form-tailor) (institutional document formats) · [report-to-brief](https://github.com/parkjui92/report-to-brief) (report compression)
+**Plugins that build and edit** — [lecture-deck-kit](https://github.com/parkjui92/lecture-deck-kit) (HTML lecture slides you edit right in the browser)
+
+**Single-purpose tools** — [fact-verify](https://github.com/parkjui92/fact-verify) (check whether sources are real) · [paper-proofread](https://github.com/parkjui92/paper-proofread) (Korean academic proofreading) · [form-tailor](https://github.com/parkjui92/form-tailor) (match an organization's document format) · [report-to-brief](https://github.com/parkjui92/report-to-brief) (shorten long reports)
 
 ## License
 
-[MIT](LICENSE). No proprietary institutional templates or real client deliverables included (bring-your-own-template).
+[MIT](LICENSE). Contains no organization-specific templates and no real client deliverables.
