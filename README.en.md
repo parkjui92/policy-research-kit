@@ -67,6 +67,7 @@ Which means that months later, when someone asks where a number came from, you c
 ## Good to know
 
 - Producing the Korean `.hwpx` file needs a separate converter called [kordoc](https://github.com/chrisryugj/kordoc). Without it everything still runs and you get Markdown.
+- A standard report **takes real time** — research and verification are the slow part. In a hurry, just say so ("make it quick"): research splits into parallel runs and revision loops shrink. If a stage runs far past its time budget, it shows you what's finished so far and asks how to proceed. Mechanical steps like file conversion run on a lighter, faster model from the start — but **the reviewing AI is never downgraded.**
 - **The checks reduce errors but don't eliminate them.** The reviewing AI comes from the same model family and can share the same blind spots. A person still needs to look.
 - The comparison above was **one topic, run once**. Treat it as a case you can reproduce, not a proven statistic.
 - It's shaped around Korean policy-research practice (HWPX submissions, Korean-language sources).
