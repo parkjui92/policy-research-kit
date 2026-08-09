@@ -24,7 +24,7 @@ So I measured it. I gave the same topic to plain Claude Code and to this plugin,
 
 To be straight with you: **plain Claude Code writes better prose.** The problem was that its draft had two wrong numbers in it, with no way to catch them and no record to check later.
 
-→ [Full comparison](docs/vanilla-vs-kit.md) · [Why I built this, and fuller usage notes](docs/why.md)
+→ [Full comparison](docs/vanilla-vs-kit.md) · [Why I built this, and fuller usage notes](docs/why.md) · [Strengths at a glance & what to connect](docs/strengths.md) (Korean, with English TL;DR)
 
 ## How it runs
 
