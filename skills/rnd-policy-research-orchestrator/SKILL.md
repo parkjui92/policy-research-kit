@@ -40,7 +40,7 @@ description: "실제 정책연구를 수행하고 정책연구보고서를 작�
 | 근거조사 | investigator | `sonnet` | 검색·수집 중심(I/O 병목). 출처는 뒤의 검수 게이트가 재검증 |
 | hwpx 변환 | hwpx-exporter | `haiku` | 절차화된 기계적 변환 + 자체 정량 검증 스위트 보유 |
 
-품질 우선이면 스폰 시 상위 모델을 명시해 되돌린다(예: 근거 판별이 까다로운 주제의 investigator). **reviewer는 어떤 프로파일·래더 단계에서도 모델을 낮추지 않는다** — 검증 게이트가 이 킷의 존재 이유다.
+**스폰 시 모델을 명시하지 않는다** — 에이전트 정의의 티어 기본값이 적용되도록 둔다. 스폰 프롬프트에 `model`을 적으면 에이전트 정의를 덮어써 티어가 무력화된다. 품질 우선일 때만 의도적으로 상위 모델을 명시해 되돌린다(예: 근거 판별이 까다로운 주제의 investigator). **reviewer는 어떤 프로파일·래더 단계에서도 모델을 낮추지 않는다** — 검증 게이트가 이 킷의 존재 이유다.
 
 ### ② 쾌속 프로파일
 
@@ -94,7 +94,7 @@ Phase 1에서 `_workspace/_run_log.md`에 프로파일·산출물 모드·시작
 | policy-report-writer | policy-report-writer | 본문 집필 (서론→이론적 배경→해외 동향→국내 현황→정책 대안→제언) + 참고문헌 정리 | policy-report-writing | `04_report_draft.md` |
 | hwpx-exporter | hwpx-exporter | 한글 hwpx 변환 (공용 재사용) | rnd-hwpx-export | `06_report.hwpx` |
 
-팀원 모델은 단계별 티어 기본값을 따른다 — designer·writer·reviewer `inherit`, investigator `sonnet`, hwpx-exporter `haiku`(위 "실행 프로파일" 절). 품질 우선 시 스폰에서 상위 모델로 올린다. 검토관(reviewer)은 파이프라인에서 **두 번** 등판한다(설계 후·초안 후).
+팀원 모델은 단계별 티어 기본값을 따른다 — designer·writer·reviewer `inherit`, investigator `sonnet`, hwpx-exporter `haiku`(위 "실행 프로파일" 절). 스폰 시 `model`을 명시하지 않아야 이 기본값이 적용되며, 품질 우선일 때만 의도적으로 상위 모델로 올린다. 검토관(reviewer)은 파이프라인에서 **두 번** 등판한다(설계 후·초안 후).
 
 ## 워크플로우
 
@@ -112,12 +112,13 @@ Phase 1에서 `_workspace/_run_log.md`에 프로파일·산출물 모드·시작
 2. `_workspace/` 생성 (새 실행이면 기존 것을 타임스탬프 디렉토리로 이동 후 재생성).
 3. **입력 자료 저장 + 인덱싱** — 사용자가 준 모든 자료를 `_workspace/00_input/`에 저장하고, `_workspace/00_input/_index.md`에 "파일명 — 성격(초안/통계/논문/메모) — 어느 단계·에이전트가 쓸지"를 한 줄씩 기록한다. **이 인덱스가 라우팅의 핵심**: 오케스트레이터가 각 에이전트 스폰 프롬프트에 "읽을 입력 파일 경로 + 용도"를 명시해 배분한다.
    - **자료 라우팅 규칙:** 정책 방향·범위 단서 → designer / 통계·문헌·사례·출처 → investigator / **기존 초안** → writer(베이스로 개정) + reviewer(검수 대상) / 양식 → hwpx-exporter.
+   - **양식이 있으면 designer·writer·reviewer에게도 준다.** 지금까지 양식은 변환가에게만 갔지만, 서식은 집필 단계에서 맞춰야 위계가 밀리지 않는다. 집필가에게는 서식 규격(계층·글머리·캡션 위치·강조 규율)을, 설계자에게는 장 골격과 목차 작성 단계를, 검수관에게는 축 6(양식 준수) 점검을 지시한다. **양식이 둘 이상이면 산출물 모드에 맞는 하나만 하달한다** — 글머리 체계가 서로 달라 섞이면 위계가 무너진다.
    - **사용자가 기존 초안을 제공한 경우:** 백지 집필이 아니라 그 초안을 출발점으로 삼는다. designer는 초안의 구조를 분석해 목차를 역설계·보완하고, investigator는 초안 주장의 출처를 검증·보강하며, writer는 초안을 개정한다. 이 분기를 각 에이전트 프롬프트에 명시한다.
 4. 주제가 막연하면 Phase 3의 설계자가 사용자 확인 질문을 만들 것이므로, 여기서는 명백한 누락만 짚는다.
 5. `_workspace/_run_log.md`에 실행 프로파일(표준/쾌속)·산출물 모드·시작 시각을 기록한다 — 지연 폴백 래더의 기준점("실행 프로파일" 절).
 
 ### Phase 2: 팀 구성
-1. `TeamCreate(team_name: "policy-research-team", members: [...])` — 위 5개 팀원을 각 에이전트 정의(custom type)로로 스폰한다. 각 프롬프트에 담당 스킬명·`_workspace/` 경로·입출력 파일·hwpx 입출력 경로(`04_report_draft.md`→`06_report.hwpx`)를 명시한다.
+1. `TeamCreate(team_name: "policy-research-team", members: [...])` — 위 5개 팀원을 각 에이전트 정의(custom type)로 스폰한다. **`model`은 지정하지 않는다** — 각 에이전트 정의의 단계별 티어가 적용되게 둔다. 각 프롬프트에 담당 스킬명·`_workspace/` 경로·입출력 파일·hwpx 입출력 경로(`04_report_draft.md`→`06_report.hwpx`)를 명시한다.
 2. `TaskCreate`로 의존성 있는 작업을 등록한다:
    - T1 연구설계 (designer)
    - T2 **설계 검토 게이트** (reviewer 모드1) — `depends_on: [T1]`
