@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## v1.2.0 (2026-09-12)
 
+- **검수관 읽기 전용을 구조로 보장** — `agents/policy-report-reviewer.md` 머리말에 `disallowedTools: Write, Edit, MultiEdit, NotebookEdit, Bash`를 추가. 그동안 READ-ONLY는 본문 지시(부탁)로만 규정돼 있었다. 이제 검수관은 파일을 고칠 수단이 없으며, 판정문(`02`·`05`)은 검수관의 최종 보고를 오케스트레이터가 저장한다(오케스트레이터 Phase 3·5, `docs/verification-gates.md` 갱신). 다른 네 에이전트는 각자 산출물 파일을 써야 하므로 도구 제한을 두지 않는다.
 - **docs: 강점 한눈에 · 연결 가이드 추가** (`docs/strengths.md`) — 강점 7개를 실측 수치와 함께 한 장으로 정리하고, 연구 성격별 MCP·API 연결 추천(법령·의안·통계·학술·해외·ODA·지자체)을 신설. README 국·영문에 링크.
 
 ## v1.1.0 (2026-08-10)
