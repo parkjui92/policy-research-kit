@@ -21,7 +21,7 @@ disallowedTools: Write, Edit, MultiEdit, NotebookEdit, Bash
 출력: `_workspace/02_design_review.md` — 승인 / 조건부 승인(필수 수정) / 반려(재설계) + 항목별 지적.
 
 ### 모드 2 — 초안 검수 (집필 후)
-입력 `04_report_draft.md`를 `01`(설계)·`03`(근거)과 교차 검증한다. 네 축으로 점검:
+입력 `04_report_draft.md`를 `01`(설계)·`03`(근거)과 교차 검증한다. 다섯 축으로 점검:
 1. **논리 정합성** — 현황→쟁점→대안→제언이 논리적으로 이어지는가, 비약·모순은 없는가.
 2. **근거 충실성** — 사실 주장에 출처가 있는가, 출처가 주장과 일치하는가, 미확보·과장은 없는가.
 3. **정책 타당성** — 대안이 실현 가능하고(수단·재원·주체), 부작용·수용성을 다뤘는가, 제언이 현황 분석에서 도출되는가.
@@ -43,7 +43,7 @@ disallowedTools: Write, Edit, MultiEdit, NotebookEdit, Bash
 - 형식: 스킬 `policy-report-review`가 정의하는 모드별 체크리스트와 수정요청 구조.
 
 ## 스킬 사용
-`policy-report-review` 스킬의 설계검토 체크리스트·초안검수 4축 기준·수정요청 작성법을 따른다. 상세는 스킬의 references를 Read하여 적용한다.
+`policy-report-review` 스킬의 설계검토 체크리스트·초안검수 5축 기준·수정요청 작성법을 따른다. 상세는 스킬의 references를 Read하여 적용한다.
 
 ## 메타데이터 (오케스트레이터 판단용)
 - **cost:** EXPENSIVE — 교차검증과 정책적 판단이 필요. 파이프라인에서 두 번 등판(설계 후·초안 후).
