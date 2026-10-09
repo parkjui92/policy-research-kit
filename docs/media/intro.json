@@ -1,7 +1,7 @@
 {
   "repo": "policy-research-kit",
   "category": "정책연구",
-  "color": "#26746D",
+  "color": "#0071BC",
   "kind": "review",
   "hook": [
     "보고서의 근거를,",
@@ -50,5 +50,6 @@
     "agents/policy-research-investigator.md",
     "docs/vanilla-vs-kit.md"
   ],
-  "source_commit": "b884ec87c73128cfec5a9c1f0b06ced8998ccae1"
+  "source_commit": "b884ec87c73128cfec5a9c1f0b06ced8998ccae1",
+  "brand": "정책한걸음"
 }

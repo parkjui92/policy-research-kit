@@ -1,10 +1,13 @@
 # policy-research-kit 소개영상
 
 연구자·실무자를 위한 30초 한국어 모션그래픽입니다. 무음으로 제작했으며, 핵심 내용을 화면에 표시합니다.
+정책한걸음 최종 로고에서 추출한 파랑·남색·회색, 연결 곡선과 굵은 제목을 적용했습니다.
+[디자인 기준](../../DESIGN.md) · [브랜드 보드](brand-board.png) · [색상 토큰](brand-tokens.json)
+
 공개 문서·코드의 사용 흐름을 도식화했습니다. 실제 UI나 AI 실행 화면을 녹화한 영상은 아닙니다.
 
-- [MP4 영상](intro.mp4): 1280×720, 30fps, H.264, 30초
-- [README 미리보기 GIF](intro-preview.gif): 처리·결과 장면 9초, 768×432, 10fps
+- [MP4 영상](intro.mp4): 1920×1080, 30fps, H.264, 30초
+- [README 미리보기 GIF](intro-preview.gif): 처리·결과 장면 9초, 960×540, 10fps
 - [정지 포스터](intro-poster.png) · [5개 장면 전체](intro-storyboard.png)
 - [내용 데이터](intro.json) · [렌더 스크립트](render_intro.py)
 
@@ -54,12 +57,14 @@ python3 -m pip install Pillow
 python3 docs/media/render_intro.py
 ```
 
-기본 글꼴은 macOS의 Pretendard/Apple SD Gothic Neo 또는 Linux의 Noto Sans CJK입니다.
+설명용 기본 글꼴은 macOS의 Pretendard ExtraBold·Regular이며 Apple SD Gothic Neo 또는 Linux의 Noto Sans CJK로 대체할 수 있습니다. 로고는 서체로 재조판하지 않고 원본 PNG를 사용합니다.
 다른 환경에서는 한국어 글꼴 경로를 지정합니다. 글꼴 파일은 저장소에 포함하지 않습니다.
 
 ```bash
 INTRO_FONT=/path/to/Regular.otf INTRO_FONT_BOLD=/path/to/Bold.otf python3 docs/media/render_intro.py
 ```
+
+`brand-logo.png`는 제공된 원본 PNG와 체크섬이 같은 파일입니다. 투명 바깥 여백은 배치할 때만 제외합니다. `brand-tokens.json`에 원본에서 확인한 RGB 값과 화면용 파생색을 구분해 두었습니다.
 
 `intro.json`의 문구를 고친 뒤 렌더링하면 MP4·GIF·포스터·스토리보드를 함께 갱신합니다.
 `--stills`는 정지 이미지만, `--fps 24`는 다른 프레임률의 MP4를 만듭니다(그 경우 위 사양도 수정하세요).
