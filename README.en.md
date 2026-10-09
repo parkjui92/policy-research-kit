@@ -14,8 +14,6 @@ Start with a topic and your available material. Five agent roles divide the work
 
 [![A topic and evidence move through planning, drafting, and separate review](docs/media/intro-preview.gif)](docs/media/intro.mp4)
 
-[Watch the video](docs/media/intro.mp4) · [Static image](docs/media/intro-poster.png) · [Transcript and sources (Korean)](docs/media/README.md) · [Logo-derived design system (Korean)](DESIGN.md)
-
 This silent motion graphic illustrates the documented workflow; it is not a recording of an actual run. Try the [fictional starting prompt](examples/intro-request.md) after installation. Start by confirming the research question, outline, and evidence plan, then inspect the evidence list and review record as the draft develops. Review reduces some risks but does not guarantee accuracy.
 
 ## What makes it different
