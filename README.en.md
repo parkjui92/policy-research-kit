@@ -75,7 +75,7 @@ Which means that months later, when someone asks where a number came from, you c
 
 ## Related work
 
-**Plugins that write reports and proposals** — [rnd-proposal-kit](https://github.com/parkjui92/rnd-proposal-kit) (Korean government R&D proposals) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) (social science papers)
+**Plugins that write reports and proposals** — rnd-proposal-kit (Korean government R&D proposals, private) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) (social science papers)
 
 **Plugins that build and edit** — [lecture-deck-kit](https://github.com/parkjui92/lecture-deck-kit) (HTML lecture slides you edit right in the browser)
 
