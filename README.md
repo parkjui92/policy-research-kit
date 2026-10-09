@@ -75,11 +75,8 @@ AI에게 보고서를 맡기면 결과물은 꽤 매끄럽게 나옵니다. 문�
 
 ## 함께 만든 것들
 
-**보고서·제안서를 써 주는 플러그인** — rnd-proposal-kit (정부 R&D 제안서, 비공개) · [socsci-paper-kit](https://github.com/parkjui92/socsci-paper-kit) (사회과학 논문)
 
-**만들고 고치는 플러그인** — [lecture-deck-kit](https://github.com/parkjui92/lecture-deck-kit) (강의자료 HTML 덱 · 브라우저에서 바로 수정)
-
-**하나씩 쓰는 도구** — [fact-verify](https://github.com/parkjui92/fact-verify) (출처가 진짜인지 확인) · [paper-proofread](https://github.com/parkjui92/paper-proofread) (한국어 논문 교정) · [form-tailor](https://github.com/parkjui92/form-tailor) (기관 양식에 맞춰 문서 작성) · [report-to-brief](https://github.com/parkjui92/report-to-brief) (긴 보고서를 짧게)
+연구 단계별로 쓰는 다른 도구는 [프로필](https://github.com/parkjui92)에 정리해 두었습니다.
 
 ## 라이선스
 
