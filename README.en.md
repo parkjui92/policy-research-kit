@@ -6,13 +6,21 @@
 
 [한국어](README.md) · **English**
 
-A [Claude Code](https://claude.com/claude-code) plugin that writes a policy research report for you, start to finish.
+**A [Claude Code](https://claude.com/claude-code) plugin that connects policy research planning, evidence gathering, drafting, and review, with records you can revisit.**
 
-Give it a topic and it drafts an outline, gathers sources, writes the body, and produces a Korean `.hwpx` file (the document format Korean government offices require). Five AIs split the work, and one of them **only reviews** — so the AI that wrote the text can never sign off on its own work. That's the whole idea.
+Start with a topic and your available material. Five agent roles divide the work, including a separate, read-only reviewer that checks the design and draft. Markdown is the baseline output; Korean `.hwpx` export requires a separate conversion tool.
+
+## 30-second introduction (Korean)
+
+[![A topic and evidence move through planning, drafting, and separate review](docs/media/intro-preview.gif)](docs/media/intro.mp4)
+
+[Watch the video](docs/media/intro.mp4) · [Static image](docs/media/intro-poster.png) · [Transcript and sources (Korean)](docs/media/README.md) · [Logo-derived design system (Korean)](DESIGN.md)
+
+This silent motion graphic illustrates the documented workflow; it is not a recording of an actual run. Try the [fictional starting prompt](examples/intro-request.md) after installation. Start by confirming the research question, outline, and evidence plan, then inspect the evidence list and review record as the draft develops. Review reduces some risks but does not guarantee accuracy.
 
 ## What makes it different
 
-Ask any AI to draft a research report and the writing comes out smooth. The catch is that **nobody checks whether the numbers in it are right.** Ten real, working links at the bottom make it look verified — but open them and you find figures borrowed from a different survey entirely.
+Working source links alone do not establish that the cited documents support a report's numbers. This plugin makes that comparison part of the workflow and leaves a review record.
 
 So I measured it. I gave the same topic to plain Claude Code and to this plugin, then had a neutral third party **open all 14 cited links** from both and compare them against the originals.
 
@@ -22,7 +30,7 @@ So I measured it. I gave the same topic to plain Claude Code and to this plugin,
 | Wrong numbers or wrong attribution | **2** (all stated as fact) | **0** (unconfirmed ones marked "needs checking") |
 | Did the work leave a trail? | No | 5 files |
 
-To be straight with you: **plain Claude Code writes better prose.** The problem was that its draft had two wrong numbers in it, with no way to catch them and no record to check later.
+In this one comparison, **the plain Claude Code draft was judged smoother to read.** It also contained two wrong numbers and left no evidence-checking record. This single case does not establish a general performance difference across topics or runs.
 
 → [Full comparison](docs/vanilla-vs-kit.md) · [Why I built this, and fuller usage notes](docs/why.md) · [Strengths at a glance & what to connect](docs/strengths.md) (Korean, with English TL;DR)
 
