@@ -14,7 +14,13 @@ Start with a topic and your available material. Five agent roles divide the work
 
 [![A topic and evidence move through planning, drafting, and separate review](docs/media/intro-preview.gif)](docs/media/intro.mp4)
 
-This silent motion graphic illustrates the documented workflow; it is not a recording of an actual run. Try the [fictional starting prompt](examples/intro-request.md) after installation. Start by confirming the research question, outline, and evidence plan, then inspect the evidence list and review record as the draft develops. Review reduces some risks but does not guarantee accuracy.
+This video reconstructs a Claude Code conversation and example output files; it is not a live session recording. Try the [fictional starting prompt](examples/intro-request.md) after installation. Start by confirming the research question, outline, and evidence plan, then inspect the evidence list and review record as the draft develops. Review reduces some risks but does not guarantee accuracy.
+
+## A concrete workflow
+
+For a local AI workforce policy report, attach your notes and ask: “Compare training support with specialist placement. Show me the outline and evidence plan first.” Adjust the proposed outline, then proceed with research and drafting.
+
+Read `_workspace/04_report_draft.md` alongside `03_evidence.md` and `05_draft_review.md`. For example, a claim that training is “most effective” without comparable evidence should receive a review note identifying its location, the missing evidence, and a proposed correction. This is an illustrative case, not a finding about policy effectiveness.
 
 ## What makes it different
 

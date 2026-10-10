@@ -1,7 +1,7 @@
 {
   "brand": "정책한걸음",
   "tagline": "The Step in Public Policy",
-  "version": 1,
+  "version": 2,
   "colors": {
     "blue": "#0071BC",
     "indigo": "#1B1464",
@@ -13,7 +13,11 @@
     "ink": "#171722",
     "muted": "#5B5B60",
     "line": "#D9DFEA",
-    "pale": "#EEF5FB"
+    "pale": "#EEF5FB",
+    "terminal": "#161B22",
+    "terminal_text": "#E6EDF3",
+    "terminal_muted": "#A8B3C4",
+    "terminal_accent": "#79C0FF"
   },
   "source": {
     "logo_png_sha256": "fa9be2f32b64bdd84e804722f7ea940ba013817faddfed8be7e65dc711baea8f",
@@ -51,11 +55,15 @@
     "height": 1080,
     "scene_times": [
       0,
-      4,
-      11,
-      20,
-      26,
+      7,
+      14,
+      23,
       30
     ]
+  },
+  "layout": {
+    "logo_width_1080p": 144,
+    "logo_position": "top-right",
+    "screen_focus": "terminal and file contents"
   }
 }
