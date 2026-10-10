@@ -1,0 +1,258 @@
+{
+  "category": "정책연구보고서 작성",
+  "provenance": "Claude Code 사용 흐름 재구성 · 가상 과제",
+  "sources": [
+    "skills/rnd-policy-research-orchestrator/SKILL.md",
+    "agents/policy-report-reviewer.md",
+    "agents/policy-research-investigator.md"
+  ],
+  "scenes": [
+    {
+      "title": "주제와 자료를 주고, 목차부터 확인합니다",
+      "caption": "먼저 연구 범위와 목차를 조정한 뒤 조사·집필을 시작합니다.",
+      "panels": [
+        {
+          "title": "Claude Code · policy-research-kit 설치 후",
+          "kind": "terminal",
+          "lines": [
+            {
+              "text": "> 지역 중소기업의 AI 인력정책 보고서를 준비해줘.",
+              "style": "command"
+            },
+            {
+              "text": "  교육지원과 전문인력 연계를 비교하고 싶어.",
+              "style": "command"
+            },
+            {
+              "text": "  @메모.md를 읽고 목차와 조사계획부터 보여줘.",
+              "style": "command"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "● 먼저 연구 질문과 비교 기준을 정리하겠습니다.",
+              "style": "accent"
+            },
+            {
+              "text": "  자료가 없는 항목은 필요한 근거로 남기겠습니다.",
+              "style": "text"
+            },
+            {
+              "text": "  목차를 확인받은 뒤 조사와 집필을 진행하겠습니다.",
+              "style": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "목차를 보고, 조사 방향을 바꿀 수 있습니다",
+      "caption": "“3장에 해외사례를 추가해줘”처럼 바로 수정 요청을 합니다.",
+      "panels": [
+        {
+          "title": "Claude Code · 목차 확인",
+          "kind": "terminal",
+          "lines": [
+            {
+              "text": "● 제안 목차의 주요 항목입니다.",
+              "style": "accent"
+            },
+            {
+              "text": "  1. 연구 목적과 지역 인력 수요",
+              "style": "text"
+            },
+            {
+              "text": "  3. 교육지원·전문인력 연계 사례",
+              "style": "text"
+            },
+            {
+              "text": "  5. 정책 대안과 추진계획",
+              "style": "text"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "> 3장에 해외사례를 추가해줘.",
+              "style": "command"
+            },
+            {
+              "text": "● 목차를 수정하고 조사 범위를 맞추겠습니다.",
+              "style": "accent"
+            }
+          ]
+        },
+        {
+          "title": "01_research_design.md · 발췌",
+          "kind": "file",
+          "lines": [
+            {
+              "text": "# 연구설계",
+              "style": "heading"
+            },
+            {
+              "text": "질문: 어떤 지원이 현장 수요에 맞는가?",
+              "style": "text"
+            },
+            {
+              "text": "비교: 교육지원 / 전문인력 연계",
+              "style": "text"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "## 먼저 확보할 자료",
+              "style": "heading"
+            },
+            {
+              "text": "기업 수요조사 · 사업 참여 실적",
+              "style": "text"
+            },
+            {
+              "text": "해외 유사사업의 운영·평가 자료",
+              "style": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "초안의 주장과 근거를 따로 대조합니다",
+      "caption": "근거가 부족한 문장은 위치·문제·수정 방향을 기록합니다.",
+      "panels": [
+        {
+          "title": "04_report_draft.md · 검수 전 예시",
+          "kind": "file",
+          "lines": [
+            {
+              "text": "# 5. 정책 대안",
+              "style": "heading"
+            },
+            {
+              "text": "교육지원의 효과가 가장 크다.",
+              "style": "text"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "03_evidence.md · 근거 목록",
+              "style": "heading"
+            },
+            {
+              "text": "사업별 효과 비교 자료: 미확보",
+              "style": "text"
+            },
+            {
+              "text": "필요 자료: 동일 기준의 성과평가",
+              "style": "text"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "확인되지 않은 수치를 채우지 않습니다.",
+              "style": "muted"
+            }
+          ]
+        },
+        {
+          "title": "05_draft_review.md · 검토 예시",
+          "kind": "file",
+          "lines": [
+            {
+              "text": "# 별도 검토 역할의 지적",
+              "style": "heading"
+            },
+            {
+              "text": "위치: 5장 정책 대안",
+              "style": "text"
+            },
+            {
+              "text": "문제: 효과 순위의 비교 근거가 없음",
+              "style": "highlight"
+            },
+            {
+              "text": "권고: 단정 표현을 완화하고",
+              "style": "text"
+            },
+            {
+              "text": "      비교 자료를 확보할 것",
+              "style": "text"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "수정: 효과 비교는 추가 검증이 필요함.",
+              "style": "accent"
+            },
+            {
+              "text": "[보강 필요] 사업별 성과평가",
+              "style": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "초안과 함께, 근거·검수 기록이 남습니다",
+      "caption": "나중에 “이 판단의 근거가 무엇인가”를 파일에서 다시 확인합니다.",
+      "panels": [
+        {
+          "title": "작업 폴더 · _workspace/",
+          "kind": "terminal",
+          "lines": [
+            {
+              "text": "01_research_design.md     연구 질문·목차",
+              "style": "accent"
+            },
+            {
+              "text": "02_design_review.md       집필 전 설계 점검",
+              "style": "text"
+            },
+            {
+              "text": "03_evidence.md            근거·출처·미확보 항목",
+              "style": "accent"
+            },
+            {
+              "text": "04_report_draft.md        보고서 초안",
+              "style": "text"
+            },
+            {
+              "text": "05_draft_review.md        위치·문제·수정 방향",
+              "style": "accent"
+            },
+            {
+              "text": "",
+              "style": "text"
+            },
+            {
+              "text": "다음 행동: README의 설치 명령 → 주제와 자료로 요청",
+              "style": "command"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "repo": "policy-research-kit",
+  "seconds": 30,
+  "scene_times": [
+    0,
+    7,
+    14,
+    23,
+    30
+  ],
+  "brand": "정책한걸음",
+  "source_commit": "f1366e5a2595530a9da1fa33de3a8973bb814e6a"
+}
