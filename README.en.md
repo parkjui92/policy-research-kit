@@ -48,6 +48,16 @@ It **stops twice.** The first stop catches a bad outline — once 50 pages exist
 
 Things these checks have actually caught: 3 sources that didn't exist, a figure converted 10× off, an overall average written as if it applied to one specific group, and a research question claiming more than the evidence could support.
 
+
+## Which model, and how long?
+
+| | Recommended | To save tokens | Avoid |
+|---|---|---|---|
+| Session model (design · writing · review) | **Opus-class** | Sonnet at minimum | Haiku |
+| Research · Hangul conversion | Sonnet (default) | Sonnet | Haiku |
+
+In a blind-scored pilot (one Korean policy brief, Oct 2026): Opus writing 27/30, Sonnet 25/30, Haiku 16/30 (Haiku filled evidence gaps with invented content). Haiku conversion lost about 45% of the body text while reporting "lossless", so the converter default moved to Sonnet, which matched the draft exactly (tables 1:1, text similarity 1.0000). A 4–6 page brief took about **21 minutes** (plus two human check-ins); the standard 50+ page report budget is about **50 minutes**. Plain Claude Code took about 6 minutes and roughly one sixth of the tokens; in a blind audit it had more factual errors (1 vs 0) but richer current-status data, because the kit's research cap starved the key question — fixed right after, not yet re-measured. Details (Korean): [docs/model-guide.md](docs/model-guide.md)
+
 ## Install
 
 ```
@@ -79,7 +89,7 @@ Which means that months later, when someone asks where a number came from, you c
 ## Good to know
 
 - Producing the Korean `.hwpx` file needs a separate converter called [kordoc](https://github.com/chrisryugj/kordoc). Without it everything still runs and you get Markdown.
-- A standard report **takes real time** — research and verification are the slow part. In a hurry, just say so ("make it quick"): research splits into parallel runs and revision loops shrink. If a stage runs far past its time budget, it shows you what's finished so far and asks how to proceed. Mechanical steps like file conversion run on a lighter, faster model from the start — but **the reviewing AI is never downgraded.**
+- A standard report **takes real time** — research and verification are the slow part. In a hurry, just say so ("make it quick"): research splits into parallel runs and revision loops shrink. If a stage runs far past its time budget, it shows you what's finished so far and asks how to proceed. Research and Hangul conversion run on Sonnet from the start — but **the reviewing AI is never downgraded.**
 - **The checks reduce errors but don't eliminate them.** The reviewing AI comes from the same model family and can share the same blind spots. A person still needs to look.
 - The comparison above was **one topic, run once**. Treat it as a case you can reproduce, not a proven statistic.
 - It's shaped around Korean policy-research practice (HWPX submissions, Korean-language sources).
