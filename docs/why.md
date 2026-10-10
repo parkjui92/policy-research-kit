@@ -106,7 +106,7 @@ README에서 덜어낸 배경과 사용 시나리오를 여기 둔다.
 
 | 에이전트 | 역할 | 스킬 |
 |---|---|---|
-| `policy-research-designer` | 의도분석·RQ·분석틀·목차 설계 | `policy-research-design` |
+| `policy-research-designer` | 요청 원문에서 의도 확인서 작성·RQ·분석틀·목차 설계 | `policy-research-design` |
 | `policy-report-reviewer` | 설계 게이트(모드1) + 초안 검수(모드2) · **READ-ONLY** | `policy-report-review` |
 | `policy-research-investigator` | 통계·문헌·국내외 사례 조사 | `policy-research` (+geo-search 내장) |
 | `policy-report-writer` | 논증형 본문 집필·참고문헌 정리 | `policy-report-writing` |
@@ -229,7 +229,7 @@ The investigator attaches a source to every fact, so you can trace any sentence 
 
 | Agent | Role | Skill |
 |---|---|---|
-| `policy-research-designer` | Intent analysis, RQ, framework, outline | `policy-research-design` |
+| `policy-research-designer` | Intent brief from the verbatim request, RQ, framework, outline | `policy-research-design` |
 | `policy-report-reviewer` | Design gate (mode 1) + draft review (mode 2) · **READ-ONLY** | `policy-report-review` |
 | `policy-research-investigator` | Statistics, literature, domestic/international cases | `policy-research` (+ built-in geo-search) |
 | `policy-report-writer` | Argument-driven body, reference list | `policy-report-writing` |
