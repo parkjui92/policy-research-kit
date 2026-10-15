@@ -3,3 +3,8 @@ _workspace/
 __pycache__/
 *.pyc
 .env
+
+# 의도 파악 도구 — 실제 요청이 담기는 것은 저장소에 넣지 않는다
+skills/policy-research-design/regression/history.md
+skills/policy-research-design/regression/cases/real-*/
+intent-misreads.md
